@@ -22,5 +22,5 @@ console.log(numberOfVowels("aeiou")); // 5
 
 module.exports = numberOfVowels;
 
-// const vowelsArray = data.split("").filter((char) => 
-//     vowels.includes(char));
+// const vowelsArray = data.split("").filter((char) => vowels.includes(char));
+//Where we can put join(" ")
