@@ -17,12 +17,10 @@ const repeatNumbers = function (data) {
   let repeatNum = 0;
   
   const repeatStrings = data.map((item) => {
-    if (item.length > 1) {
       repeatString = String(item[0]);
       repeatNum = item[1];
       let repeatedString = repeatString.repeat(repeatNum)
       return repeatedString;
-    }
   })
   return repeatStrings;
 };
