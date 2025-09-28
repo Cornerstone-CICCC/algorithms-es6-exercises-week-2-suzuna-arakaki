@@ -45,11 +45,8 @@ const whereCanIPark = function (spots, vehicle) {
     if (vehicle !== null) {
       let eachSpot = spot.includes(vehicle[0].toUpperCase());
       return eachSpot;
-      
-      
     }
     
-    // console.log(eachSpot);
   })
   return availablePark;
 };
