@@ -10,33 +10,13 @@ Create a function named camelCase that will convert a string to camel case, and 
 */
 
 const camelCase = function (input) {
-  // recieve the strings form the argument
-  // separate the strings by using split(" "), put them in the new variable 
-  // take an each first str of the word to be Upper-case
-  // put them together by useing join("")
-  // ("this is a string")); // thisIsAString
   const words = input.split(" ");
   const capitalized = words.map(word => {
-    if (word.length > 0){
-      let slicedWords = words.slice(1);
-      // return word[0].toUpperCase()
-      // + word.slice(1);
-      console.log(slicedWords);
-    } 
+    let slicedWords = word[0].toUpperCase() + word.slice(1);
+    return slicedWords;
   })
-  
-
-
-
-
-  // if (words.length > 1) {
-  //   let toBeUpperCaseStr = [...words].slice(1);
-  //   let upperCasedStr = toBeUpperCaseStr.upperCase();
-    
-  // }
-  // let firstStr = [...separated];
-  // 
-  
+  const joinedWords = capitalized[0].toLowerCase() + capitalized.slice(1).join("");
+  console.log(joinedWords);  
 };
 
 console.log(camelCase("this is a string")); // thisIsAString
@@ -44,3 +24,27 @@ console.log(camelCase("loopy cornerstone")); //loopyCornerstone
 console.log(camelCase("supercalifragalisticexpialidocious")); // supercalifragalisticexpialidocious
 
 module.exports = camelCase;
+
+
+  // recieve the strings form the argument
+  // separate the strings by using split(" "), put them in the new variable 
+  // take an each first str of the word to be Upper-case
+  // put them together by useing join("")
+  // ("this is a string")); // thisIsAString
+  
+// let joinedWords = [...slicedWords].join("");
+    
+    // if (word.length > 0){
+    //   // let slicedWords = word[0].toUpperCase() + word.slice(1);
+    //   // return word[0].toUpperCase() .slice(1)
+    //   // + word.slice(1);
+    //   
+    // } 
+
+// if (words.length > 1) {
+  //   let toBeUpperCaseStr = [...words].slice(1);
+  //   let upperCasedStr = toBeUpperCaseStr.upperCase();
+    
+  // }
+  // let firstStr = [...separated];
+  // 
