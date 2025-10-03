@@ -62,12 +62,35 @@ const prismVolume = function (height, width, depth) {
 console.log(prismVolume(3, 4, 5) === 30); //true
 
 const totalVolume = function (solids) {
-  // const totalSum = solids.map((solid) => {
+  solids = [
+    { type: "sphere", radius: 40 },
+    { type: "sphere", radius: 10 },
+    { type: "cone", radius: 3, height: 5 }
+  ] 
+  const totalSum = solids.map((solid) => {
+    switch(solid.type){
+      case "sphere":
+        const sphVolume = sphereVolume(solid.radius);
+        return sphVolume;
+
+      case "cone":
+        const cVolume = coneVolume(solid.radius, solid.height);
+        return cVolume;
+
+      case "prism":
+        const priVolume = prismVolume(solid.height, solid.width, solid.depth);
+        return priVolume;
+    }
+  })
+  return totalSum.reduce((acc, cur) => acc + cur, 0);
+
+}
+
+// const totalSum = solids.map((solid) => {
   //   const calculate = sphereVolume(solid) + coneVolume() + prismVolume();
   //   console.log(calculate);
   // })
   // return totalSum;
-};
 
 const largeSphere = {
   type: "sphere",
